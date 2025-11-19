@@ -1,13 +1,13 @@
 # MMM-WunderGround-PWS-Observations
 
-A basic module for displaying weather observations from a WunderGound PWS
+A basic module for displaying local current weather data from your PWS via FOSHKplugin
 
 This project started life as an attempted to get the MMM-Wunderground module from https://github.com/RedNax67/MMM-WunderGround working after the changes to the Wunderground API. I decided to cut it down to just the data provided from your PWS.   
 
 The Weather Icons used in this module are created and maintained by Erik Flowers. v1.0 artwork by Lukas Bischoff. v1.1 - 2.0 artwork by Erik Flowers www.weathericons.io
 
 
-Requires WunderGround API Key. Available for free for PWS opperators
+Requires FOSHKplugin http address http://ipaddress:port as apiBase
 
 Your Station ID.
 
@@ -19,8 +19,8 @@ Your Station ID.
     position: 'top_right',
     config: {
     
-        apikey: '<your WunderGround API Key', // private; don't share!
-        pws: '<your slected PWS id>', //
+        apikey: '',
+        pws: 'PWSid', //
         roundTmpDecs:1,
         sysstat: 0,
         debug: 1,
@@ -53,11 +53,17 @@ The following properties can be configured:
 	</thead>
 	<tbody>
 		<tr>
-			<td><code>apikey</code></td>
-			<td>The Weather Underground API key
+			<td><code>apiBase</code></td>
+			<td>The FOSHKplugin http URL
 				<br> This value is <b>REQUIRED</b>
 			</td>
-        </tr>
+    </tr>
+		<tr>
+			<td><code>apikey</code></td>
+			<td>The Weather Underground API key
+				<br> This value is optional.
+			</td>
+    </tr>
 		<tr>
 			<td><code>wind</code></td>
 			<td>Displays wind data<br>
