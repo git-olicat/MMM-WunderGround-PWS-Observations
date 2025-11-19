@@ -30,6 +30,7 @@ Remember: apiBase is mandatory and should contain the FOSHKplugin http URL (e.g.
 				module: 'MMM-WunderGround-PWS-Observations',
 
 				position: 'top_right',
+				header: 'FOSHKplugin data',
 				config: {
 
 					apiBase: 'http://ipaddress:port/observations/', // e.g. http://192.168.178.100:8080/observations/
