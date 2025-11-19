@@ -31,6 +31,54 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         windChill: 1,
         heatIndex: 1,
         temperature: 1,
+        
+        // Oliver 19.11.25
+        solarradiation: 0,
+        indoorHumidity = 0,
+        indoorTemperature = 0,
+        temperature1 = 0,       // WH31 channel #1
+        Humidity1 = 0,
+        temperature2 = 0,       // WH31 channel #2
+        Humidity2 = 0,
+        temperature3 = 0,       // WH31 channel #3
+        Humidity3 = 0,
+        temperature4 = 0,       // WH31 channel #4
+        Humidity4 = 0,
+        temperature5 = 0,       // WH31 channel #5
+        Humidity5 = 0,
+        temperature6 = 0,       // WH31 channel #6
+        Humidity6 = 0,
+        temperature7 = 0,       // WH31 channel #7
+        Humidity7 = 0,
+        temperature8 = 0,       // WH31 channel #8
+        Humidity8 = 0,
+        soilmoisture = 0,       // WH51 channel #1
+        soilmoisture2 = 0,      // WH51 channel #2
+        soilmoisture3 = 0,      // WH51 channel #3
+        soilmoisture4 = 0,      // WH51 channel #4
+        soilmoisture5 = 0,      // WH51 channel #5
+        soilmoisture6 = 0,      // WH51 channel #6
+        soilmoisture7 = 0,      // WH51 channel #7
+        soilmoisture8 = 0,      // WH51 channel #8
+        soilmoisture9 = 0,      // WH51 channel #9
+        soilmoisture10 = 0,     // WH51 channel #10
+        soilmoisture11 = 0,     // WH51 channel #11
+        soilmoisture12 = 0,     // WH51 channel #12
+        soilmoisture13 = 0,     // WH51 channel #13
+        soilmoisture14 = 0,     // WH51 channel #14
+        soilmoisture15 = 0,     // WH51 channel #15
+        soilmoisture16 = 0,     // WH51 channel #16
+        soiltemp = 0,           // WN34 channel #1
+        soiltemp2 = 0,          // WN34 channel #2
+        soiltemp3 = 0,          // WN34 channel #3
+        soiltemp4 = 0,          // WN34 channel #4
+        soiltemp5 = 0,          // WN34 channel #5
+        soiltemp6 = 0,          // WN34 channel #6
+        soiltemp7 = 0,          // WN34 channel #7
+        soiltemp8 = 0,          // WN34 channel #8
+        lightning_time = 0,     // WH57 last lightning
+        lightning_day = 0,      // WH57 lightning count
+        lightning_distance = 0, // WH57 lightning distance
     },
         
     // Define required translations.
@@ -94,13 +142,6 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         
         if (this.config.apiBase === "") {
             wrapper.innerHTML = this.translate("APIBASE") + this.name +
-                ".";
-            wrapper.className = "dimmed light small";
-            return wrapper;
-        }
-
-        if (this.config.apikey === "") {
-            wrapper.innerHTML = this.translate("APIKEY") + this.name +
                 ".";
             wrapper.className = "dimmed light small";
             return wrapper;
@@ -336,9 +377,9 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 
     processWeather: function(data) {
     
-		this.windDirection = this.deg2Cardinal(data.observations[0].winddir);
+      this.windDirection = this.deg2Cardinal(data.observations[0].winddir);
     	this.Humidity = data.observations[0].humidity;
-		this.UV = data.observations[0].uv;
+      this.UV = data.observations[0].uv;
     
     	this.temperature = data.observations[0][this.config.units].temp;
     	
@@ -351,11 +392,63 @@ Module.register("MMM-WunderGround-PWS-Observations", {
     	this.windGust = data.observations[0][this.config.units].windGust;
     	this.pressure = data.observations[0][this.config.units].pressure;
     	this.rainRate = data.observations[0][this.config.units].precipRate;
-		this.rainfall = data.observations[0][this.config.units].precipTotal;
+      this.rainfall = data.observations[0][this.config.units].precipTotal;
 
+      // Oliver, 19.11.25
+      this.solarradiation = data.observations[0].solarradiation;
+      
+      this.indoorHumidity = data.observations[0].indoorHumidity;
+      this.indoorTemperature = data.observations[0][this.config.units].indoorTemp;
+      
+      this.temperature1 = data.observations[0][this.config.units].temp1f;
+      this.Humidity1 = data.observations[0].humidity1;
+      this.temperature2 = data.observations[0][this.config.units].temp2f;
+      this.Humidity2 = data.observations[0].humidity2;
+      this.temperature3 = data.observations[0][this.config.units].temp3f;
+      this.Humidity3 = data.observations[0].humidity3;
+      this.temperature4 = data.observations[0][this.config.units].temp4f;
+      this.Humidity4 = data.observations[0].humidity4;
+      this.temperature5 = data.observations[0][this.config.units].temp5f;
+      this.Humidity5 = data.observations[0].humidity5;
+      this.temperature6 = data.observations[0][this.config.units].temp6f;
+      this.Humidity6 = data.observations[0].humidity6;
+      this.temperature7 = data.observations[0][this.config.units].temp7f;
+      this.Humidity7 = data.observations[0].humidity7;
+      this.temperature8 = data.observations[0][this.config.units].temp8f;
+      this.Humidity8 = data.observations[0].humidity8;
+      
+      this.soilmoisture = data.observations[0].soilmoisture;
+      this.soilmoisture2 = data.observations[0].soilmoisture2;
+      this.soilmoisture3 = data.observations[0].soilmoisture3;
+      this.soilmoisture4 = data.observations[0].soilmoisture4;
+      this.soilmoisture5 = data.observations[0].soilmoisture5;
+      this.soilmoisture6 = data.observations[0].soilmoisture6;
+      this.soilmoisture7 = data.observations[0].soilmoisture7;
+      this.soilmoisture8 = data.observations[0].soilmoisture8;
+      this.soilmoisture9 = data.observations[0].soilmoisture9;
+      this.soilmoisture10 = data.observations[0].soilmoisture10;
+      this.soilmoisture11 = data.observations[0].soilmoisture11;
+      this.soilmoisture12 = data.observations[0].soilmoisture12;
+      this.soilmoisture13 = data.observations[0].soilmoisture13;
+      this.soilmoisture14 = data.observations[0].soilmoisture14;
+      this.soilmoisture15 = data.observations[0].soilmoisture15;
+      this.soilmoisture16 = data.observations[0].soilmoisture16;
+      
+      this.soiltemp = data.observations[0][this.config.units].soiltempf;
+      this.soiltemp2 = data.observations[0][this.config.units].soiltemp2f;
+      this.soiltemp3 = data.observations[0][this.config.units].soiltemp3f;
+      this.soiltemp4 = data.observations[0][this.config.units].soiltemp4f;
+      this.soiltemp5 = data.observations[0][this.config.units].soiltemp5f;
+      this.soiltemp6 = data.observations[0][this.config.units].soiltemp6f;
+      this.soiltemp7 = data.observations[0][this.config.units].soiltemp7f;
+      this.soiltemp8 = data.observations[0][this.config.units].soiltemp8f;
 
-        this.loaded = true;
-        this.updateDom(this.config.animationSpeed);
+      this.lightning_time = data.observations[0].lightning_time;
+      this.lightning_day = data.observations[0].lightning_day;
+      this.lightning_distance = data.observations[0][this.config.units].lightning_distance;
+      
+      this.loaded = true;
+      this.updateDom(this.config.animationSpeed);
         	
     },
     
