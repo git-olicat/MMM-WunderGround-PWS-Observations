@@ -2,7 +2,8 @@
 
 A basic module for displaying local current weather data from your PWS via FOSHKplugin
 
-This project started life as an attempted to get the MMM-Wunderground module from https://github.com/RedNax67/MMM-WunderGround working after the changes to the Wunderground API. I decided to cut it down to just the data provided from your PWS.   
+This project started life as an attempted to get the MMM-Wunderground module from https://github.com/RedNax67/MMM-WunderGround working for a local access via WU protocol offered by FOSHKplugin http service.
+I decided to cut it down to just the data provided from your local PWS.   
 
 The Weather Icons used in this module are created and maintained by Erik Flowers. v1.0 artwork by Lukas Bischoff. v1.1 - 2.0 artwork by Erik Flowers www.weathericons.io
 
