@@ -34,51 +34,51 @@ Module.register("MMM-WunderGround-PWS-Observations", {
         
         // Oliver 19.11.25
         solarradiation: 0,
-        indoorHumidity = 0,
-        indoorTemperature = 0,
-        temperature1 = 0,       // WH31 channel #1
-        Humidity1 = 0,
-        temperature2 = 0,       // WH31 channel #2
-        Humidity2 = 0,
-        temperature3 = 0,       // WH31 channel #3
-        Humidity3 = 0,
-        temperature4 = 0,       // WH31 channel #4
-        Humidity4 = 0,
-        temperature5 = 0,       // WH31 channel #5
-        Humidity5 = 0,
-        temperature6 = 0,       // WH31 channel #6
-        Humidity6 = 0,
-        temperature7 = 0,       // WH31 channel #7
-        Humidity7 = 0,
-        temperature8 = 0,       // WH31 channel #8
-        Humidity8 = 0,
-        soilmoisture = 0,       // WH51 channel #1
-        soilmoisture2 = 0,      // WH51 channel #2
-        soilmoisture3 = 0,      // WH51 channel #3
-        soilmoisture4 = 0,      // WH51 channel #4
-        soilmoisture5 = 0,      // WH51 channel #5
-        soilmoisture6 = 0,      // WH51 channel #6
-        soilmoisture7 = 0,      // WH51 channel #7
-        soilmoisture8 = 0,      // WH51 channel #8
-        soilmoisture9 = 0,      // WH51 channel #9
-        soilmoisture10 = 0,     // WH51 channel #10
-        soilmoisture11 = 0,     // WH51 channel #11
-        soilmoisture12 = 0,     // WH51 channel #12
-        soilmoisture13 = 0,     // WH51 channel #13
-        soilmoisture14 = 0,     // WH51 channel #14
-        soilmoisture15 = 0,     // WH51 channel #15
-        soilmoisture16 = 0,     // WH51 channel #16
-        soiltemp = 0,           // WN34 channel #1
-        soiltemp2 = 0,          // WN34 channel #2
-        soiltemp3 = 0,          // WN34 channel #3
-        soiltemp4 = 0,          // WN34 channel #4
-        soiltemp5 = 0,          // WN34 channel #5
-        soiltemp6 = 0,          // WN34 channel #6
-        soiltemp7 = 0,          // WN34 channel #7
-        soiltemp8 = 0,          // WN34 channel #8
-        lightning_time = 0,     // WH57 last lightning
-        lightning_day = 0,      // WH57 lightning count
-        lightning_distance = 0, // WH57 lightning distance
+        indoorHumidity: 0,
+        indoorTemperature: 0,
+        temperature1: 0,       // WH31 channel #1
+        Humidity1: 0,
+        temperature2: 0,       // WH31 channel #2
+        Humidity2: 0,
+        temperature3: 0,       // WH31 channel #3
+        Humidity3: 0,
+        temperature4: 0,       // WH31 channel #4
+        Humidity4: 0,
+        temperature5: 0,       // WH31 channel #5
+        Humidity5: 0,
+        temperature6: 0,       // WH31 channel #6
+        Humidity6: 0,
+        temperature7: 0,       // WH31 channel #7
+        Humidity7: 0,
+        temperature8: 0,       // WH31 channel #8
+        Humidity8: 0,
+        soilmoisture: 0,       // WH51 channel #1
+        soilmoisture2: 0,      // WH51 channel #2
+        soilmoisture3: 0,      // WH51 channel #3
+        soilmoisture4: 0,      // WH51 channel #4
+        soilmoisture5: 0,      // WH51 channel #5
+        soilmoisture6: 0,      // WH51 channel #6
+        soilmoisture7: 0,      // WH51 channel #7
+        soilmoisture8: 0,      // WH51 channel #8
+        soilmoisture9: 0,      // WH51 channel #9
+        soilmoisture10: 0,     // WH51 channel #10
+        soilmoisture11: 0,     // WH51 channel #11
+        soilmoisture12: 0,     // WH51 channel #12
+        soilmoisture13: 0,     // WH51 channel #13
+        soilmoisture14: 0,     // WH51 channel #14
+        soilmoisture15: 0,     // WH51 channel #15
+        soilmoisture16: 0,     // WH51 channel #16
+        soiltemp: 0,           // WN34 channel #1
+        soiltemp2: 0,          // WN34 channel #2
+        soiltemp3: 0,          // WN34 channel #3
+        soiltemp4: 0,          // WN34 channel #4
+        soiltemp5: 0,          // WN34 channel #5
+        soiltemp6: 0,          // WN34 channel #6
+        soiltemp7: 0,          // WN34 channel #7
+        soiltemp8: 0,          // WN34 channel #8
+        lightning_time: 0,     // WH57 last lightning
+        lightning_day: 0,      // WH57 lightning count
+        lightning_distance: 0, // WH57 lightning distance
     },
         
     // Define required translations.
@@ -172,7 +172,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
 			console.log(row_sitrep);
 			
 			var row1_sitrep = document.createElement("tr");
-            //row1_sitrep.className = "pop";
+      //row1_sitrep.className = "pop";
 			console.log(row_sitrep);
 			
 			var row2_sitrep = document.createElement("tr");
