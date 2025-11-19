@@ -379,7 +379,7 @@ Module.register("MMM-WunderGround-PWS-Observations", {
     
       this.windDirection = this.deg2Cardinal(data.observations[0].winddir);
     	this.Humidity = data.observations[0].humidity;
-      this.UV = data.observations[0].uv;
+      this.UV = data.observations[0].UV;
     
     	this.temperature = data.observations[0][this.config.units].temp;
     	
