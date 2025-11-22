@@ -23,7 +23,7 @@ module.exports = NodeHelper.create({
     console.log(notification);
     var self = this;
     
-    if(notification === "GET_FOSHKPLUGIN") {
+    if(notification === "GET_WUNDERGROUND") {
       this.config = payload;
       if ( this.config.debug === 1 ) {
         console.log('Lets get FOSHKplugin requested!!!!!');
@@ -71,12 +71,8 @@ module.exports = NodeHelper.create({
     function(error, response, body) {
       if (!error && response.statusCode == 200) {
         this.wunderPayload = body;
-        /*
-        if ( this.config.debug === 1 ) {
-          console.log(moment().format() + " 5 " + self.name + ": " + body);
-        }
-        */
-        self.sendSocketNotification('FOSHKPLUGIN',body);
+        //console.log(moment().format() + " 5 " + self.name + ": " + body);
+        self.sendSocketNotification('WUNDERGROUND',body);
       } else {
         console.log(moment().format() + " 6 " + self.name + ": " + error);
       }
