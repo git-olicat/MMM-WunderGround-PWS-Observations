@@ -502,27 +502,50 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity5 == "1"){ 
       var indoorHumidity5Icon = document.createElement("td");
       indoorHumidity5Icon.className = "pop wi wi-humidity lpad";
-      row21_sitrep.appendChild(indoorHumidity5Icon);
+      row22_sitrep.appendChild(indoorHumidity5Icon);
 
       var indoorHumidity5Txt = document.createElement("td");
       indoorHumidity5Txt.className = "popr";
       indoorHumidity5Txt.innerHTML = " " + this.Humidity5 + "%";
-      row21_sitrep.appendChild(indoorHumidity5Txt);
-      table_sitrep.appendChild(row21_sitrep);
+      row22_sitrep.appendChild(indoorHumidity5Txt);
+      table_sitrep.appendChild(row22_sitrep);
     }
 
     if (this.config.temperature5 == "1"){
       var temperature5Icon = document.createElement("td");
       temperature5Icon.className = "pop wi wi-thermometer";
-      row22_sitrep.appendChild(temperature5Icon);
+      row23_sitrep.appendChild(temperature5Icon);
     
       var temperature5 = document.createElement("td");
       temperature5.className = "popr";
       temperature5.innerHTML = " " + this.temperature5 + "&deg;";
-      row22_sitrep.appendChild(temperature5);
-      table_sitrep.appendChild(row22_sitrep);
+      row23_sitrep.appendChild(temperature5);
+      table_sitrep.appendChild(row23_sitrep);
     }
 
+    if (this.config.Humidity6 == "1"){ 
+      var indoorHumidity6Icon = document.createElement("td");
+      indoorHumidity6Icon.className = "pop wi wi-humidity lpad";
+      row23_sitrep.appendChild(indoorHumidity6Icon);
+
+      var indoorHumidity6Txt = document.createElement("td");
+      indoorHumidity6Txt.className = "popr";
+      indoorHumidity6Txt.innerHTML = " " + this.Humidity6 + "%";
+      row23_sitrep.appendChild(indoorHumidity6Txt);
+      table_sitrep.appendChild(row23_sitrep);
+    }
+
+    if (this.config.temperature6 == "1"){
+      var temperature6Icon = document.createElement("td");
+      temperature6Icon.className = "pop wi wi-thermometer";
+      row24_sitrep.appendChild(temperature6Icon);
+    
+      var temperature6 = document.createElement("td");
+      temperature6.className = "popr";
+      temperature6.innerHTML = " " + this.temperature5 + "&deg;";
+      row24_sitrep.appendChild(temperature6);
+      table_sitrep.appendChild(row24_sitrep);
+    }
 
 
 
