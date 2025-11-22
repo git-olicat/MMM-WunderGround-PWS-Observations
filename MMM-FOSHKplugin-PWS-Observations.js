@@ -1022,9 +1022,9 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     this.soiltemp7 = data.observations[0][this.config.units].soiltemp7f;
     this.soiltemp8 = data.observations[0][this.config.units].soiltemp8f;
 
-    this.lightning_time = data.observations[0].lightning_time;
-    this.lightning_day = data.observations[0].lightning_day;
-    this.lightning_distance = data.observations[0][this.config.units].lightning_distance;
+    this.lightning_time = data.observations[0].lightningTime;
+    this.lightning_day = data.observations[0].lightningCount;
+    this.lightning_distance = data.observations[0][this.config.units].lightningDistance;
     
     this.loaded = true;
     this.updateDom(this.config.animationSpeed);
