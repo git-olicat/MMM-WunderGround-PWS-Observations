@@ -906,6 +906,10 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       lightning_timeIcon.className = "pop wi wi-lightning";
       row54_sitrep.appendChild(lightning_timeIcon);
     
+      const lightningTime = this.lightning_time;
+      const lightningTime = new Date(ligthningTime * 1000);
+      this.lightning_time = date.toLocaleTimeString("de-DE") + " " + date.toLocaleDateString("de-DE");
+
       var lightning_time = document.createElement("td");
       lightning_time.className = "popr";
       lightning_time.innerHTML = " " + this.lightning_time + "";
