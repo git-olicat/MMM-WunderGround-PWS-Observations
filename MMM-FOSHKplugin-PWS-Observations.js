@@ -380,7 +380,51 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       row12_sitrep.appendChild(indoorHumidityTxt);
       table_sitrep.appendChild(row12_sitrep);
     }
+
+    if (this.config.indoorTemperature == "1"){
+      var temperatureIcon = document.createElement("td");
+      temperatureIcon.className = "pop wi wi-thermometer";
+      row13_sitrep.appendChild(temperatureIcon);
     
+      var temperature = document.createElement("td");
+      temperature.className = "popr";
+      temperature.innerHTML = " " + this.indoorTemperature + "&deg;";
+      row13_sitrep.appendChild(temperature);
+      table_sitrep.appendChild(row13_sitrep);
+    }
+
+
+
+
+    if (this.config.Humidity1 == "1"){ 
+      var indoorHumidityIcon = document.createElement("td");
+      indoorHumidityIcon.className = "pop wi wi-humidity lpad";
+      row12_sitrep.appendChild(indoorHumidityIcon);
+
+      var indoorHumidityTxt = document.createElement("td");
+      indoorHumidityTxt.className = "popr";
+      indoorHumidityTxt.innerHTML = this.Humidity1 + "%";
+      row12_sitrep.appendChild(indoorHumidityTxt);
+      table_sitrep.appendChild(row12_sitrep);
+    }
+
+    if (this.config.temperature1 == "1"){
+      var temperatureIcon = document.createElement("td");
+      temperatureIcon.className = "pop wi wi-thermometer";
+      row13_sitrep.appendChild(temperatureIcon);
+    
+      var temperature = document.createElement("td");
+      temperature.className = "popr";
+      temperature.innerHTML = " " + this.temperature1 + "&deg;";
+      row13_sitrep.appendChild(temperature);
+      table_sitrep.appendChild(row13_sitrep);
+    }
+
+
+
+
+
+
     console.log("table" + table_sitrep);
     wrapper.appendChild(table_sitrep);
     console.log(wrapper);
@@ -417,8 +461,6 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     this.indoorHumidity = data.observations[0].indoorHumidity;
     this.indoorTemperature = data.observations[0][this.config.units].indoorTemp;
 
-    console.log(this.solarRadiation + this.indoorHumidity)
-    
     this.temperature1 = data.observations[0][this.config.units].temp1f;
     this.Humidity1 = data.observations[0].humidity1;
     this.temperature2 = data.observations[0][this.config.units].temp2f;
