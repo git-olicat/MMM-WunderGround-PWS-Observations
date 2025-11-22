@@ -357,15 +357,15 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     }
     
     // Oliver, 22.11.25 - what about rows?
-    if (this.config.solarradiation == "1"){ 
-      var solarradiationIcon = document.createElement("td");
-      solarradiationIcon.className = "pop wi wi-hot lpad";
-      row11_sitrep.appendChild(solarradiationIcon);
+    if (this.config.solarRadiation == "1"){ 
+      var solarRadiationIcon = document.createElement("td");
+      solarRadiationIcon.className = "pop wi wi-hot lpad";
+      row11_sitrep.appendChild(solarRadiationIcon);
 
-      var solarradiationTxt = document.createElement("td");
-      solarradiationTxt.className = "popr";
-      solarradiationTxt.innerHTML = this.solarradiation + "%";
-      row11_sitrep.appendChild(solarradiationTxt);
+      var solarRadiationTxt = document.createElement("td");
+      solarRadiationTxt.className = "popr";
+      solarRadiationTxt.innerHTML = this.solarRadiation + "W/m²";
+      row11_sitrep.appendChild(solarRadiationTxt);
       table_sitrep.appendChild(row11_sitrep);
     }
 
@@ -416,6 +416,8 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     
     this.indoorHumidity = data.observations[0].indoorHumidity;
     this.indoorTemperature = data.observations[0][this.config.units].indoorTemp;
+
+    console.log(this.solarRadiation + this.indoorHumidity)
     
     this.temperature1 = data.observations[0][this.config.units].temp1f;
     this.Humidity1 = data.observations[0].humidity1;
