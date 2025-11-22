@@ -908,7 +908,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     
       var lightning_time = document.createElement("td");
       lightning_time.className = "popr";
-      lightning_time.innerHTML = " " + this.lightning_time + "oli";
+      lightning_time.innerHTML = " " + this.lightning_time + "";
       row54_sitrep.appendChild(lightning_time);
       table_sitrep.appendChild(row54_sitrep);
     }
@@ -920,7 +920,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     
       var lightning_day = document.createElement("td");
       lightning_day.className = "popr";
-      lightning_day.innerHTML = " " + this.lightning_time + "";
+      lightning_day.innerHTML = " " + this.lightning_day + "";
       row55_sitrep.appendChild(lightning_day);
       table_sitrep.appendChild(row55_sitrep);
     }
@@ -940,8 +940,6 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       row56_sitrep.appendChild(lightning_distance);
       table_sitrep.appendChild(row56_sitrep);
     }
-
-
 
     console.log("table" + table_sitrep);
     wrapper.appendChild(table_sitrep);
