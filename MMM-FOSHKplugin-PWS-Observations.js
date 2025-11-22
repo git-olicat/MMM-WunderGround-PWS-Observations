@@ -906,13 +906,13 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       lightning_timeIcon.className = "pop wi wi-lightning";
       row54_sitrep.appendChild(lightning_timeIcon);
     
-      const lightningTime = this.lightning_time;
-      const lightningTime = new Date(ligthningTime * 1000);
-      this.lightning_time = date.toLocaleTimeString("de-DE") + " " + date.toLocaleDateString("de-DE");
+      const lightningTime = new Date(this.lightning_time * 1000);
+      lightningHuman = lightningTime.toLocaleDateString("de-DE")+ " " + lightningTime.toLocaleTimeString("de-DE");
+      console.log(lightningHuman);
 
       var lightning_time = document.createElement("td");
       lightning_time.className = "popr";
-      lightning_time.innerHTML = " " + this.lightning_time + "";
+      lightning_time.innerHTML = " " + lightningHuman + "";
       row54_sitrep.appendChild(lightning_time);
       table_sitrep.appendChild(row54_sitrep);
     }
