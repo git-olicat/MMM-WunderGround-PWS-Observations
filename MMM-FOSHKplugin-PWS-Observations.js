@@ -205,6 +205,16 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     var row18_sitrep = document.createElement("tr");
     var row19_sitrep = document.createElement("tr");
     var row20_sitrep = document.createElement("tr");
+    var row21_sitrep = document.createElement("tr");
+    var row22_sitrep = document.createElement("tr");
+    var row23_sitrep = document.createElement("tr");
+    var row24_sitrep = document.createElement("tr");
+    var row25_sitrep = document.createElement("tr");
+    var row26_sitrep = document.createElement("tr");
+    var row27_sitrep = document.createElement("tr");
+    var row28_sitrep = document.createElement("tr");
+    var row29_sitrep = document.createElement("tr");
+    var row30_sitrep = document.createElement("tr");
   
     if (this.config.wind == "1"){
       var windDirectionIcon = document.createElement("td");
@@ -441,8 +451,6 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       table_sitrep.appendChild(row17_sitrep);
     }
 
-
-
     if (this.config.Humidity3 == "1"){ 
       var indoorHumidity3Icon = document.createElement("td");
       indoorHumidity3Icon.className = "pop wi wi-humidity lpad";
@@ -466,6 +474,59 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       row19_sitrep.appendChild(temperature3);
       table_sitrep.appendChild(row19_sitrep);
     }
+
+    if (this.config.Humidity4 == "1"){ 
+      var indoorHumidity4Icon = document.createElement("td");
+      indoorHumidity4Icon.className = "pop wi wi-humidity lpad";
+      row20_sitrep.appendChild(indoorHumidity4Icon);
+
+      var indoorHumidity4Txt = document.createElement("td");
+      indoorHumidity4Txt.className = "popr";
+      indoorHumidity4Txt.innerHTML = " " + this.Humidity4 + "%";
+      row20_sitrep.appendChild(indoorHumidity4Txt);
+      table_sitrep.appendChild(row20_sitrep);
+    }
+
+    if (this.config.temperature4 == "1"){
+      var temperature4Icon = document.createElement("td");
+      temperature4Icon.className = "pop wi wi-thermometer";
+      row21_sitrep.appendChild(temperature4Icon);
+    
+      var temperature4 = document.createElement("td");
+      temperature4.className = "popr";
+      temperature4.innerHTML = " " + this.temperature4 + "&deg;";
+      row21_sitrep.appendChild(temperature4);
+      table_sitrep.appendChild(row21_sitrep);
+    }
+
+    if (this.config.Humidity5 == "1"){ 
+      var indoorHumidity5Icon = document.createElement("td");
+      indoorHumidity5Icon.className = "pop wi wi-humidity lpad";
+      row21_sitrep.appendChild(indoorHumidity5Icon);
+
+      var indoorHumidity5Txt = document.createElement("td");
+      indoorHumidity5Txt.className = "popr";
+      indoorHumidity5Txt.innerHTML = " " + this.Humidity5 + "%";
+      row21_sitrep.appendChild(indoorHumidity5Txt);
+      table_sitrep.appendChild(row21_sitrep);
+    }
+
+    if (this.config.temperature5 == "1"){
+      var temperature5Icon = document.createElement("td");
+      temperature5Icon.className = "pop wi wi-thermometer";
+      row22_sitrep.appendChild(temperature5Icon);
+    
+      var temperature5 = document.createElement("td");
+      temperature5.className = "popr";
+      temperature5.innerHTML = " " + this.temperature5 + "&deg;";
+      row22_sitrep.appendChild(temperature5);
+      table_sitrep.appendChild(row22_sitrep);
+    }
+
+
+
+
+
 
 
 
