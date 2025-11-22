@@ -42,7 +42,7 @@ Remember: apiBase is mandatory and should contain the FOSHKplugin http URL (e.g.
 					currentweather: 1,
 					wind: 1,
 					humidity: 1,
-					UV: 0,
+					UV: 1,
 					rain: 1,
 					rainRate: 1,
 					pressure: 1,
@@ -50,6 +50,8 @@ Remember: apiBase is mandatory and should contain the FOSHKplugin http URL (e.g.
 					windChill: 1,
 					heatIndex: 1,
 					temperature: 1,
+          solarRadiation: 1,
+          indoorHumidity: 1
 				}
 			},
 
