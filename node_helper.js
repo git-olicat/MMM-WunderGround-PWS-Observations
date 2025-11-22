@@ -13,7 +13,7 @@ const exec = require('child_process').exec;
 
 module.exports = NodeHelper.create({
   start: function () {
-    console.log('MMM-WunderGround-PWS-Observations helper started ...');
+    console.log('MMM-FOSHKplugin-PWS-Observations helper started ...');
     this.fetcherRunning = false;
     this.wunderPayload = "";
   },
@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
     if(notification === "GET_WUNDERGROUND") {
       this.config = payload;
       if ( this.config.debug === 1 ) {
-        console.log('Lets get WunderGround requested!!!!!');
+        console.log('Lets get FOSHKplugin requested!!!!!');
         console.log(this.config);
       }
       if (!this.fetcherRunning) {
