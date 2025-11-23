@@ -907,7 +907,8 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       row54_sitrep.appendChild(lightning_timeIcon);
 
       const lightningTime = new Date(this.lightning_time * 1000);
-      lightningHuman = lightningTime.toLocaleDateString("de-DE")+ "<br>" + lightningTime.toLocaleTimeString("de-DE");
+      //lightningHuman = lightningTime.toLocaleDateString("de-DE")+ " " + lightningTime.toLocaleTimeString("de-DE");
+      lightningHuman = lightningTime.toLocaleDateString(config.locale)+ " " + lightningTime.toLocaleTimeString(config.locale);
       console.log("1 *********************************" + lightningHuman + "***************************");
       //console.log("2 *********************************" + locale + "***************************");
       //console.log("3 *********************************" + this.locale + "***************************");
