@@ -450,6 +450,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity1 == "1"){
       var indoorHumidity1Icon = document.createElement("td");
       indoorHumidity1Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity1Icon.innerHTML = "1";
       row14_sitrep.appendChild(indoorHumidity1Icon);
 
       var indoorHumidity1Txt = document.createElement("td");
@@ -475,6 +476,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity2 == "1"){
       var indoorHumidity2Icon = document.createElement("td");
       indoorHumidity2Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity2Icon.innerHTML = "2";
       row16_sitrep.appendChild(indoorHumidity2Icon);
 
       var indoorHumidity2Txt = document.createElement("td");
@@ -500,6 +502,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity3 == "1"){
       var indoorHumidity3Icon = document.createElement("td");
       indoorHumidity3Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity3Icon.innerHTML = "3";
       row18_sitrep.appendChild(indoorHumidity3Icon);
 
       var indoorHumidity3Txt = document.createElement("td");
@@ -525,6 +528,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity4 == "1"){
       var indoorHumidity4Icon = document.createElement("td");
       indoorHumidity4Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity4Icon.innerHTML = "4";
       row20_sitrep.appendChild(indoorHumidity4Icon);
 
       var indoorHumidity4Txt = document.createElement("td");
@@ -550,6 +554,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity5 == "1"){
       var indoorHumidity5Icon = document.createElement("td");
       indoorHumidity5Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity5Icon.innerHTML = "5";
       row22_sitrep.appendChild(indoorHumidity5Icon);
 
       var indoorHumidity5Txt = document.createElement("td");
@@ -575,6 +580,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity6 == "1"){
       var indoorHumidity6Icon = document.createElement("td");
       indoorHumidity6Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity6Icon.innerHTML = "6";
       row24_sitrep.appendChild(indoorHumidity6Icon);
 
       var indoorHumidity6Txt = document.createElement("td");
@@ -600,6 +606,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity7 == "1"){
       var indoorHumidity7Icon = document.createElement("td");
       indoorHumidity7Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity7Icon.innerHTML = "7";
       row26_sitrep.appendChild(indoorHumidity7Icon);
 
       var indoorHumidity7Txt = document.createElement("td");
@@ -625,6 +632,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.Humidity8 == "1"){
       var indoorHumidity8Icon = document.createElement("td");
       indoorHumidity8Icon.className = "pop wi wi-humidity lpad";
+      indoorHumidity8Icon.innerHTML = "8";
       row28_sitrep.appendChild(indoorHumidity8Icon);
 
       var indoorHumidity8Txt = document.createElement("td");
