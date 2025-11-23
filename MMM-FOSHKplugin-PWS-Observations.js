@@ -19,19 +19,19 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     apiBase: "",
     socknot: "GET_WUNDERGROUND",
     sockrcv: "WUNDERGROUND",
-    wind: 1,  //1 displays the parameters 0 hides it
+    temperature: 1,
     humidity: 1,
+    pressure: 1,
+    wind: 1,  //1 displays the parameters 0 hides it
+    solarRadiation: 0,
     UV: 0,
     rain: 1,
     rainRate: 1,
-    pressure: 1,
     dewPoint: 1,
     windChill: 1,
     heatIndex: 1,
-    temperature: 1,
 
     // Oliver 19.11.25
-    solarRadiation: 0,
     indoorTemperature: 0,
     indoorHumidity: 0,
     temperature1: 0,       // WH31 channel #1
@@ -245,6 +245,42 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     var row59_sitrep = document.createElement("tr");
     var row60_sitrep = document.createElement("tr");
   
+    if (this.config.temperature == "1"){
+      var temperatureIcon = document.createElement("td");
+      temperatureIcon.className = "pop wi wi-thermometer";
+      row10_sitrep.appendChild(temperatureIcon);
+
+      var temperature = document.createElement("td");
+      temperature.className = "popr";
+      temperature.innerHTML = " " + this.temperature + "&deg;";
+      row10_sitrep.appendChild(temperature);
+      table_sitrep.appendChild(row10_sitrep);
+    }
+
+    if (this.config.humidity == "1"){
+      var HumidityIcon = document.createElement("td");
+      HumidityIcon.className = "pop wi wi-humidity lpad";
+      row2_sitrep.appendChild(HumidityIcon);
+
+      var HumidityTxt = document.createElement("td");
+      HumidityTxt.className = "popr";
+      HumidityTxt.innerHTML = this.Humidity + "%";
+      row2_sitrep.appendChild(HumidityTxt);
+      table_sitrep.appendChild(row2_sitrep);
+    }
+    
+    if (this.config.pressure == "1"){
+      var pressureIcon = document.createElement("td");
+      pressureIcon.className = "pop wi wi-barometer";
+      row6_sitrep.appendChild(pressureIcon);
+
+      var pressure = document.createElement("td");
+      pressure.className ="popr";
+      pressure.innerHTML = this.pressure;
+      row6_sitrep.appendChild(pressure);
+      table_sitrep.appendChild(row6_sitrep);
+    }
+    
     if (this.config.wind == "1"){
       var windDirectionIcon = document.createElement("td");
       windDirectionIcon.className = "pop wi wi-wind " + this.windDirection;
@@ -268,26 +304,27 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       var windGust = document.createElement("td");
       windGust.className = "popr";
       if (this.config.units == "metric") {
-        windGust.innerHTML = " " + this.windGust + "Kmh";
+        windGust.innerHTML = " " + this.windGust + "kmh";
       } else {
         windGust.innerHTML = " " + this.windGust + "mph";
       }
       row1_sitrep.appendChild(windGust);
       table_sitrep.appendChild(row1_sitrep);
     }
-  
-    if (this.config.humidity == "1"){
-      var HumidityIcon = document.createElement("td");
-      HumidityIcon.className = "pop wi wi-humidity lpad";
-      row2_sitrep.appendChild(HumidityIcon);
 
-      var HumidityTxt = document.createElement("td");
-      HumidityTxt.className = "popr";
-      HumidityTxt.innerHTML = this.Humidity + "%";
-      row2_sitrep.appendChild(HumidityTxt);
-      table_sitrep.appendChild(row2_sitrep);
+    if (this.config.solarRadiation == "1"){
+      var solarRadiationIcon = document.createElement("td");
+      solarRadiationIcon.className = "pop wi wi-hot lpad";
+      solarRadiationIcon.innerHTML = "SR";
+      row11_sitrep.appendChild(solarRadiationIcon);
+
+      var solarRadiationTxt = document.createElement("td");
+      solarRadiationTxt.className = "popr";
+      solarRadiationTxt.innerHTML = this.solarRadiation + "W/m²";
+      row11_sitrep.appendChild(solarRadiationTxt);
+      table_sitrep.appendChild(row11_sitrep);
     }
-    
+
     if (this.config.UV == "1"){
       var UVIcon = document.createElement("td");
       UVIcon.className = "pop wi wi-hot";
@@ -333,18 +370,6 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       table_sitrep.appendChild(row5_sitrep);
     }
 
-    if (this.config.pressure == "1"){
-      var pressureIcon = document.createElement("td");
-      pressureIcon.className = "pop wi wi-barometer";
-      row6_sitrep.appendChild(pressureIcon);
-
-      var pressure = document.createElement("td");
-      pressure.className ="popr";
-      pressure.innerHTML = this.pressure;
-      row6_sitrep.appendChild(pressure);
-      table_sitrep.appendChild(row6_sitrep);
-    }
-    
     if (this.config.dewPoint == "1"){
       var dewPointIcon = document.createElement("td");
       dewPointIcon.className ="pop";
@@ -382,32 +407,6 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       heatIndex.innerHTML = " " + this.heatIndex + "&deg;";
       row9_sitrep.appendChild(heatIndex);
       table_sitrep.appendChild(row9_sitrep);
-    }
-
-    if (this.config.temperature == "1"){
-      var temperatureIcon = document.createElement("td");
-      temperatureIcon.className = "pop wi wi-thermometer";
-      row10_sitrep.appendChild(temperatureIcon);
-
-      var temperature = document.createElement("td");
-      temperature.className = "popr";
-      temperature.innerHTML = " " + this.temperature + "&deg;";
-      row10_sitrep.appendChild(temperature);
-      table_sitrep.appendChild(row10_sitrep);
-    }
-
-    // Oliver, 22.11.25 - what about rows?
-    if (this.config.solarRadiation == "1"){
-      var solarRadiationIcon = document.createElement("td");
-      solarRadiationIcon.className = "pop wi wi-hot lpad";
-      solarRadiationIcon.innerHTML = "SR";
-      row11_sitrep.appendChild(solarRadiationIcon);
-
-      var solarRadiationTxt = document.createElement("td");
-      solarRadiationTxt.className = "popr";
-      solarRadiationTxt.innerHTML = this.solarRadiation + "W/m²";
-      row11_sitrep.appendChild(solarRadiationTxt);
-      table_sitrep.appendChild(row11_sitrep);
     }
 
     if (this.config.indoorTemperature == "1"){
