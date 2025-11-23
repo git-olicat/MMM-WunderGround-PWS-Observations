@@ -836,6 +836,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp2 == "1"){
       var soiltemp2Icon = document.createElement("td");
       soiltemp2Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp2Icon.innerHTML = "2";
       row47_sitrep.appendChild(soiltemp2Icon);
 
       var soiltemp2 = document.createElement("td");
@@ -848,6 +849,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp3 == "1"){
       var soiltemp3Icon = document.createElement("td");
       soiltemp3Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp3Icon.innerHTML = "3";
       row48_sitrep.appendChild(soiltemp3Icon);
 
       var soiltemp3 = document.createElement("td");
@@ -860,6 +862,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp4 == "1"){
       var soiltemp4Icon = document.createElement("td");
       soiltemp4Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp4Icon.innerHTML = "4";
       row49_sitrep.appendChild(soiltemp4Icon);
 
       var soiltemp4 = document.createElement("td");
@@ -872,6 +875,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp5 == "1"){
       var soiltemp5Icon = document.createElement("td");
       soiltemp5Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp5Icon.innerHTML = "5";
       row50_sitrep.appendChild(soiltemp5Icon);
 
       var soiltemp5 = document.createElement("td");
@@ -884,6 +888,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp6 == "1"){
       var soiltemp6Icon = document.createElement("td");
       soiltemp6Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp6Icon.innerHTML = "6";
       row51_sitrep.appendChild(soiltemp6Icon);
 
       var soiltemp6 = document.createElement("td");
@@ -896,6 +901,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp7 == "1"){
       var soiltemp7Icon = document.createElement("td");
       soiltemp7Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp7Icon.innerHTML = "7";
       row52_sitrep.appendChild(soiltemp7Icon);
 
       var soiltemp7 = document.createElement("td");
@@ -908,6 +914,7 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
     if (this.config.soiltemp8 == "1"){
       var soiltemp8Icon = document.createElement("td");
       soiltemp8Icon.className = "pop wi wi-thermometer-exterior";
+      soiltemp8Icon.innerHTML = "8";
       row53_sitrep.appendChild(soiltemp8Icon);
 
       var soiltemp8 = document.createElement("td");
