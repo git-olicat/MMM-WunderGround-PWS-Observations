@@ -273,10 +273,14 @@ Module.register("MMM-FOSHKplugin-PWS-Observations", {
       var pressureIcon = document.createElement("td");
       pressureIcon.className = "pop wi wi-barometer";
       row6_sitrep.appendChild(pressureIcon);
-
+      
       var pressure = document.createElement("td");
       pressure.className ="popr";
-      pressure.innerHTML = this.pressure;
+      if (this.config.units == "metric") {
+        pressure.innerHTML = " " + this.pressure + "hPa";
+      } else {
+        pressure.innerHTML = " " + this.pressure + "inHg";
+      }
       row6_sitrep.appendChild(pressure);
       table_sitrep.appendChild(row6_sitrep);
     }
